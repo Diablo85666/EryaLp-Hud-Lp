@@ -3,24 +3,63 @@
 <head>
   <title>Jukebox HUD</title>
   <style>
-    body { background-color: black; color: white; font-family: sans-serif; }
-    .track { margin: 10px; cursor: pointer; }
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .track {
+      margin: 15px 0;
+      font-size: 1.2em;
+    }
+    .play-button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      font-size: 1em;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .play-button:hover {
+      background-color: #666;
+    }
+    audio {
+      width: 80%;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
   <h2>🎵 Seleziona una canzone</h2>
-  <div class="track" onclick="play('https://www.dropbox.com/home/Erya?preview=Ti+senti+mai+fuori+posto+anche+tu+Un+dialogo+poetico.mp3')">Ti Senti Mai Fuori Posto</div>
-  <div class="track" onclick="play('https://example.com/song2.mp3')">Canzone 2</div>
-  <div class="track" onclick="play('https://example.com/song3.mp3')">Canzone 3</div>
 
-  <audio id="player" controls autoplay style="width:100%; margin-top:20px;"></audio>
+  <div class="track">
+    Ti Senti Mai Fuori Posto
+    <button class="play-button" onclick="play('https://dl.dropboxusercontent.com/scl/fi/ozifs9h5hci1ughfr7soj/Ti-senti-mai-fuori-posto-anche-tu-Un-dialogo-poetico.mp3?rlkey=vplful7mj7jqtwi3tre7m9ok4&st=wbfwj80q')">▶ Play</button>
+  </div>
+
+  <div class="track">
+    Canzone 2
+    <button class="play-button" onclick="play('https://example.com/song2.mp3')">▶ Play</button>
+  </div>
+
+  <div class="track">
+    Canzone 3
+    <button class="play-button" onclick="play('https://example.com/song3.mp3')">▶ Play</button>
+  </div>
+
+  <audio id="player" controls></audio>
 
   <script>
     function play(url) {
-      document.getElementById('player').src = url;
-      document.getElementById('player').play();
+      const player = document.getElementById('player');
+      player.src = url;
+      player.play();
     }
   </script>
 </body>
 </html>
-
