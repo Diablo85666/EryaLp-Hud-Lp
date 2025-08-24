@@ -5,32 +5,54 @@
   <style>
     body {
       background-color: black;
+      background-image: url('');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
       font-family: sans-serif;
       text-align: center;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
     }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px black;
+    }
+
     .track {
-      margin: 15px 0;
-      font-size: 1.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      font-size: 1.5em;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+      width: fit-content;
     }
+
     .play-button {
-      margin-left: 10px;
-      padding: 5px 10px;
+      margin-left: 15px;
+      padding: 8px 16px;
       font-size: 1em;
       background-color: #444;
       color: white;
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      transition: background-color 0.3s;
     }
+
     .play-button:hover {
       background-color: #666;
     }
+
     audio {
       width: 80%;
-      margin-top: 30px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -44,12 +66,12 @@
 
   <div class="track">
     Canzone 2
-    <button class="play-button" onclick="play('https://dl.dropboxusercontent.com/scl/fi/ozifs9h5hci1ughfr7soj/Ti-senti-mai-fuori-posto-anche-tu-Un-dialogo-poetico.mp3?rlkey=vplful7mj7jqtwi3tre7m9ok4&st=wbfwj80q')">▶ Play</button>
+    <button class="play-button" onclick="play('https://example.com/song2.mp3')">▶ Play</button>
   </div>
 
   <div class="track">
     Canzone 3
-    <button class="play-button" onclick="play('https://dl.dropboxusercontent.com/scl/fi/ozifs9h5hci1ughfr7soj/Ti-senti-mai-fuori-posto-anche-tu-Un-dialogo-poetico.mp3?rlkey=vplful7mj7jqtwi3tre7m9ok4&st=wbfwj80q')">▶ Play</button>
+    <button class="play-button" onclick="play('https://example.com/song3.mp3')">▶ Play</button>
   </div>
 
   <audio id="player" controls></audio>
@@ -60,7 +82,15 @@
       player.src = url;
       player.play();
     }
+
+    // 🔄 Inserisci qui il link della tua immagine di sfondo
+    const backgroundImageUrl = ''; // <-- Lascia vuoto per sfondo nero
+
+    if (backgroundImageUrl) {
+      document.body.style.backgroundImage = `url('${backgroundImageUrl}')`;
+    }
   </script>
 </body>
 </html>
+
 
